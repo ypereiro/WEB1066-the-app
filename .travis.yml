@@ -20,4 +20,4 @@ deploy:
   - provider: script
     script: deploy_production.sh
     on:
-      branch: final_step_test-deploy
+      branch: final_step4_test-deploy
