@@ -17,4 +17,7 @@ before_deploy:
   - ./gradlew test jacocoTestCoverageVerification
 
 deploy:
-  - echo 'WIP'
+  - provider: script
+    script: deploy_production.sh
+    on:
+      branch: final_step_test-deploy
