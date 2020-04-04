@@ -7,5 +7,4 @@ install:
   - ./gradlew clean jar
 
 script:
-  - echo 'testing coming soon'
-  - echo ' my first dummy tests'
+  - ./gradelw test
