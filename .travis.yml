@@ -8,3 +8,4 @@ install:
 
 script:
   - echo 'testing coming soon'
+  - echo ' my first dummy test'
