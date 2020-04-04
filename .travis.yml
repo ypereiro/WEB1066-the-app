@@ -3,5 +3,5 @@ jdk:
   - oraclejdk9
 
 script:
-  - ./greadlew clean jar
+  - ./gradlew clean jar
   - echo 'testing coming soon'
