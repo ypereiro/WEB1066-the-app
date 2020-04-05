@@ -15,7 +15,7 @@ install:
   - ./gradlew clean jar
 
 script:
-  - COVERAGE=0.5 ./gradlew -p $TESTFOLDER
+  - "COVERAGE=0.5 ./gradlew -p $TESTFOLDER"
 
 
 deploy:
