@@ -16,14 +16,13 @@ install:
 
 jobs:
   include:
-    -stage: test
-     script: "COVERAGE=0.05 ./gradlew -p ./monolithic/ui check" #0.05773373545885394000000000
-     script: "COVERAGE=0.14 ./gradlew -p ./monolithic/service/cart check" #0.14843750000000000000000000
-     script: "COVERAGE=0.0 ./gradlew -p ./monolithic/service/user check" #0.00000
-     script: "COVERAGE=0.0 ./gradlew -p ./monolithic/repository/order check" #0.000000
-     script: "COVERAGE=0.0 ./gradlew -p ./monolithic/repository/cart check" #0.00000
-     script: "COVERAGE=0.12 ./gradlew -p ./monolithic/repository/product check" #0.12452107279693486000000000
-     script: "COVERAGE=0.50 ./gradlew -p ./monolithic/repository/user check"
+    - script: "COVERAGE=0.05 ./gradlew -p ./monolithic/ui check" #0.05773373545885394000000000
+    - script: "COVERAGE=0.14 ./gradlew -p ./monolithic/service/cart check" #0.14843750000000000000000000
+    - script: "COVERAGE=0.0 ./gradlew -p ./monolithic/service/user check" #0.00000
+    - script: "COVERAGE=0.0 ./gradlew -p ./monolithic/repository/order check" #0.000000
+    - script: "COVERAGE=0.0 ./gradlew -p ./monolithic/repository/cart check" #0.00000
+    - script: "COVERAGE=0.12 ./gradlew -p ./monolithic/repository/product check" #0.12452107279693486000000000
+    - script: "COVERAGE=0.50 ./gradlew -p ./monolithic/repository/user check"
 
 
 deploy:
