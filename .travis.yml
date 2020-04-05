@@ -3,19 +3,19 @@ dist: trusty
 jdk:
   - oraclejdk8
 env:
-  - TESTFOLDER=./monolithic/ui check
-  - TESTFOLDER=./monolithic/service/cart check
-  - TESTFOLDER=./monolithic/service/user check
-  - TESTFOLDER=./monolithic/repository/order check
-  - TESTFOLDER=./monolithic/repository/cart check
-  - TESTFOLDER=./monolithic/repository/product check
-  - TESTFOLDER=./monolithic/repository/user check
+  - TESTFOLDER=./monolithic/ui
+  - TESTFOLDER=./monolithic/service/cart
+  - TESTFOLDER=./monolithic/service/user
+  - TESTFOLDER=./monolithic/repository/order
+  - TESTFOLDER=./monolithic/repository/cart
+  - TESTFOLDER=./monolithic/repository/product
+  - TESTFOLDER=./monolithic/repository/user
 
 install:
   - ./gradlew clean jar
 
 script:
-  - "COVERAGE=0.5 ./gradlew -p $TESTFOLDER"
+  - "COVERAGE=0.5 ./gradlew -p $TESTFOLDER check"
 
 
 deploy:
