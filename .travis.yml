@@ -22,7 +22,7 @@ jobs:
     - script: "COVERAGE=0.0 ./gradlew -p ./monolithic/repository/order check" #0.000000
     - script: "COVERAGE=0.0 ./gradlew -p ./monolithic/repository/cart check" #0.00000
     - script: "COVERAGE=0.12 ./gradlew -p ./monolithic/repository/product check" #0.12452107279693486000000000
-    - script: "COVERAGE=0.50 ./gradlew -p ./monolithic/repository/user check"
+    - script: "COVERAGE=0.30 ./gradlew -p ./monolithic/repository/user check"
 
 
 deploy:
