@@ -17,7 +17,7 @@ install:
   - ./gradlew clean jar
 
 script:
-  - "COVERAGE=0.5 ./gradlew -p $TESTFOLDER check"
+  - "COVERAGE=$COV ./gradlew -p $TESTFOLDER check"
 
 
 deploy:
