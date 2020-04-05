@@ -10,7 +10,9 @@ env:
   - TESTFOLDER=./monolithic/repository/cart
   - TESTFOLDER=./monolithic/repository/product
   - TESTFOLDER=./monolithic/repository/user
-
+  - COV=0.5
+  - COV=0.24
+  - COV=0.10
 install:
   - ./gradlew clean jar
 
