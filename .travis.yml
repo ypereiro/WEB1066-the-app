@@ -2,19 +2,21 @@ language: java
 dist: trusty
 jdk:
   - oraclejdk8
+env:
+  - TESTFOLDER= ./monolithic/ui check
+  - TESTFOLDER= ./monolithic/service/cart check
+  - TESTFOLDER= ./monolithic/service/user check
+  - TESTFOLDER= ./monolithic/repository/order check
+  - TESTFOLDER= ./monolithic/repository/cart check
+  - TESTFOLDER= ./monolithic/repository/product check
+  - TESTFOLDER= ./monolithic/repository/user check
 
 install:
   - ./gradlew clean jar
 
 script:
-  - ./gradlew test
+  - COVERAGE=0.5 ./gradlew -p $TESTFOLDER
 
-after_success:
-  - ./gradlew jacocoTestReport
-  - find . -name jacocoTestReport.csv|xargs cat|awk -F',' '{print $3" "$4" "$5}'
-
-before_deploy:
-  - COVERAGE=0.35 ./gradlew test jacocoTestCoverageVerification
 
 deploy:
   - provider: script
