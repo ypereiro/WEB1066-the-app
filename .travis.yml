@@ -3,13 +3,13 @@ dist: trusty
 jdk:
   - oraclejdk8
 env:
-  - TESTFOLDER= ./monolithic/ui check
-  - TESTFOLDER= ./monolithic/service/cart check
-  - TESTFOLDER= ./monolithic/service/user check
-  - TESTFOLDER= ./monolithic/repository/order check
-  - TESTFOLDER= ./monolithic/repository/cart check
-  - TESTFOLDER= ./monolithic/repository/product check
-  - TESTFOLDER= ./monolithic/repository/user check
+  - TESTFOLDER=./monolithic/ui check
+  - TESTFOLDER=./monolithic/service/cart check
+  - TESTFOLDER=./monolithic/service/user check
+  - TESTFOLDER=./monolithic/repository/order check
+  - TESTFOLDER=./monolithic/repository/cart check
+  - TESTFOLDER=./monolithic/repository/product check
+  - TESTFOLDER=./monolithic/repository/user check
 
 install:
   - ./gradlew clean jar
