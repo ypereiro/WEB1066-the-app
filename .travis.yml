@@ -1,8 +1,6 @@
 language: java
 dist: trusty
-jdk:
-  - oraclejdk8
-  - oraclejdk9
+
 #env:
 #  - TESTFOLDER=./monolithic/ui
 #  - TESTFOLDER=./monolithic/service/cart
@@ -17,13 +15,48 @@ install:
 
 jobs:
   include:
-    - script: "COVERAGE=0.05 ./gradlew -p ./monolithic/ui check" #0.05773373545885394000000000
-    - script: "COVERAGE=0.14 ./gradlew -p ./monolithic/service/cart check" #0.14843750000000000000000000
-    - script: "COVERAGE=0.0 ./gradlew -p ./monolithic/service/user check" #0.00000
-    - script: "COVERAGE=0.0 ./gradlew -p ./monolithic/repository/order check" #0.000000
-    - script: "COVERAGE=0.0 ./gradlew -p ./monolithic/repository/cart check" #0.00000
-    - script: "COVERAGE=0.12 ./gradlew -p ./monolithic/repository/product check" #0.12452107279693486000000000
-    - script: "COVERAGE=0.30 ./gradlew -p ./monolithic/repository/user check"
+    - script:
+      - jdk_switcher use oraclejdk8
+      - "COVERAGE=0.05 ./gradlew -p ./monolithic/ui check" #0.05773373545885394000000000
+    - script:
+      - jdk_switcher use oraclejdk8
+      - "COVERAGE=0.14 ./gradlew -p ./monolithic/service/cart check" #0.14843750000000000000000000
+    - script:
+      - jdk_switcher use oraclejdk8
+      - "COVERAGE=0.0 ./gradlew -p ./monolithic/service/user check" #0.00000
+    - script:
+      - jdk_switcher use oraclejdk8
+      - "COVERAGE=0.0 ./gradlew -p ./monolithic/repository/order check" #0.000000
+    - script:
+      - jdk_switcher use oraclejdk8
+      - "COVERAGE=0.0 ./gradlew -p ./monolithic/repository/cart check" #0.00000
+    - script:
+      - jdk_switcher use oraclejdk8
+      - "COVERAGE=0.12 ./gradlew -p ./monolithic/repository/product check" #0.12452107279693486000000000
+    - script:
+      - jdk_switcher use oraclejdk8
+      - "COVERAGE=0.30 ./gradlew -p ./monolithic/repository/user check"
+    - script:
+      - jdk_switcher use oraclejdk9
+      - "COVERAGE=0.05 ./gradlew -p ./monolithic/ui check" #0.05773373545885394000000000
+    - script:
+      - jdk_switcher use oraclejdk9
+      - "COVERAGE=0.14 ./gradlew -p ./monolithic/service/cart check" #0.14843750000000000000000000
+    - script:
+      - jdk_switcher use oraclejdk9
+      - "COVERAGE=0.0 ./gradlew -p ./monolithic/service/user check" #0.00000
+    - script:
+      - jdk_switcher use oraclejdk9
+      - "COVERAGE=0.0 ./gradlew -p ./monolithic/repository/order check" #0.000000
+    - script:
+      - jdk_switcher use oraclejdk9
+      - "COVERAGE=0.0 ./gradlew -p ./monolithic/repository/cart check" #0.00000
+    - script:
+      - jdk_switcher use oraclejdk9
+      - "COVERAGE=0.12 ./gradlew -p ./monolithic/repository/product check" #0.12452107279693486000000000
+    - script:
+      - jdk_switcher use oraclejdk9
+      - "COVERAGE=0.30 ./gradlew -p ./monolithic/repository/user check"
 
 
 deploy:
