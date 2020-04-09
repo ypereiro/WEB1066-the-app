@@ -1,8 +1,3 @@
-language: java
-dist: trusty
-jdk:
-  - oraclejdk8
-
 sudo: required
 services:
   -docker
@@ -15,17 +10,13 @@ env:
 before_install:
   - docker login -u=$DOCKER_LOGIN -p=$DOCKER_PASSWORD
 
-  - docker pull openjdk
-  - docker build -t the-app
-  - docker tag the_app the-app:$(git rev-parse HEAD)
-  - docker push $DOCKER_LOGIN/the_app
-
-install:
-
-  #- docker run ./gradlew clean jar
-
 script:
-  #- docker run ./gradlew test
+  - docker build -t the-app .
+
 
 after_success:
+  - docker tag the_app the-app:$(git rev-parse HEAD)
+  - docker push $DOCKER_LOGIN/the-app:$(git rev-parse HEAD)
+
+
 #  - docker push $DOCKER_LOGIN/WEB1066-the-app
