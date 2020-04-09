@@ -25,4 +25,4 @@ script:
   #- docker run ./gradlew test
 
 after_success:
-  - docker push $DOCKER_LOGIN/WEB1066-the-app
+#  - docker push $DOCKER_LOGIN/WEB1066-the-app
