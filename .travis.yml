@@ -14,14 +14,15 @@ env:
 
 before_install:
   - docker login -u=$DOCKER_LOGIN -p=$DOCKER_PASSWORD
-  - docker pull openjdk
+  #- docker pull gradle
+  - docker push $DOCKER_LOGIN/WEB1066-the-app
 
 install:
 
-  - docker run ./gradlew clean jar
+  #- docker run ./gradlew clean jar
 
 script:
-  - docker run ./gradlew test
+  #- docker run ./gradlew test
 
 after_success:
   - docker push $DOCKER_LOGIN/WEB1066-the-app
