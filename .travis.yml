@@ -1,10 +1,13 @@
-language: python
-install: "pip install -r requirements.txt"
-
+language: java
+dist: trusty
+jdk:
+- oraclejdk8
 script:
-  # Run ANSIBLE checks
-  # - ANSIBLE0008: Disabled for use of sudo warnings - to address
-  # - ANSIBLE0011: Disabled for all tasks which should be named
-  # - ANSIBLE0012: Disabled (should not change if nothings needs doing) - to address
-  # - ANSIBLE0013: Disabled - few uses of shell commands - to address
-  - find vagrant/provision -name "*.yml" -exec ansible-lint -x ANSIBLE008,ANSIBLE0011,ANSIBLE0012,ANSIBLE0013  {} +
+- echo 'testing coming soon'
+- echo ' my first dummy tests'
+env:
+  global:
+  - secure: jePdAqYTZTxg+ZbnVdkpdOQkkjqz+aATHUhbKObU/XwUvj+a7No3jXdSxVs/8evYxHzD+M22DNSnNuJVcTnWfPAGlC+EEp/VzUA7idP1Zq4653xhqVwpkn8XZhD+7cL6nrD8eL+VQMdm6mTMTQhqZumtyE1lClX7wOT75dVVrGjgKEnZr/q1YwFFj6A54D6OBr2ZS+m8N09XYAWxRZs3cm6Nu6NxBOYtQo4hInnWRbB3689blMjwGWgPp1XMhqGJsFvtEF4LCY4uC/0G+tYUCWvmSh3riJAKYSGUTYFEFFwEOgn17fGvNR259DKr940SHg48eGAk0t7FDUYUAF35JQytN3co3Yvk+5QYrHEAeiERT5oNI4L+SdHSQanHKbfBdGAjjh5BoO5Jc3JZINNXvajc6Q34Ko39LyyhRJ+6p3Lw1jG0mJT5Qfk0c33xVvUFKe41SjLkCCAwzTNbE81AolKL5vyFt4x0JBQShxuLxWCXGjwELCAw/9FdMWjMoe0Cqtaqmxydw7D88Lvbgk5AhBaFoRQlUI2TFHmPlPze4TP479AX3L5eDm9OQIRlMTHGAGXQgKQ6/IlIQDLFCzcpmvmZMQWl0M0Zl+FwY33I5GAG/ALxx8JGA2rUuv1+IkUii77FGfLBcfb5oc1ZW85qw8/pjf6X0iYhAYzQo4bsmus=
+  - secure: HNxdIIFY3qVD7cw/026XoIZlLHvwTtji4WqnG0rCfAxsB7Ux0FuJyEOkqPSqwB/BHCwslOZSmLVkwiNTLf0LRJdmTb5XBc910NBCIVZ5RfNlGGqanXOEmcg2pM/Z1e3G57gn2gp1J4jY890Gl8z8LejfgCxIyuFN0ltz6kohEBs/b5IoxEm17LiKG9YyncEvYSVf53v0DSqX/wV65OHiuL6m1JcjQEKr4CDwMFWxt0NTMXvwg1gaTRaHhJXArOrYOeNxgtj0F6UFH4df5dcS32NN8rl5DJcK+dVUpm9VnqbgNiFKl1bjiAP7eq8/ebHcpeq2eEG7gZCLiccC45bRUZgsUzz/ILLaEzsGM/UdGWsaL81DsHl4JmBSvnjez8JIaQn7Qiirw/x/HTEdhUo0Na3p/Yvam7y7wWo2oNvMfiYPDY8arfddI2ObCq0aBwxF9vPWFDfaE6ubzygRAMpWwLpPE8n+AXs3PKWhQ5NG4ADj18NJKkZszmA4NNcIducNmyEiPNoS3BbTg+m9m6ZlA3EHW9Ez1o6YSam8tG1I4jDfa5OTmT3QcSZkvr7fu8ALaMCxdlTJWKZvISJMtODy05nfkbmC1zxgq/CIzm3n95FWZbZ1OhYJVDjinyXxEuw5hJ3Z+XSeVtIZITSZ3jA3FqJS/L2/9wYv/BulsydzT+A=
+install:
+- "./gradlew clean jar"
