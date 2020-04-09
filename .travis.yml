@@ -16,6 +16,7 @@ before_install:
   - docker login -u=$DOCKER_LOGIN -p=$DOCKER_PASSWORD
 
   - docker pull openjdk
+  - docker build -t the-app
   - docker tag the_app the-app:$(git rev-parse HEAD)
   - docker push $DOCKER_LOGIN/the_app
 
