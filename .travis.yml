@@ -14,8 +14,10 @@ env:
 
 before_install:
   - docker login -u=$DOCKER_LOGIN -p=$DOCKER_PASSWORD
-  #- docker pull gradle
-  - docker push $DOCKER_LOGIN/the-app
+
+  - docker pull opnejdk
+  - docker tag the_app the-app:$(git rev-parse HEAD)
+  - docker push $DOCKER_LOGIN/the_app
 
 install:
 
