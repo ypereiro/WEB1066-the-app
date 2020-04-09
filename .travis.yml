@@ -15,7 +15,7 @@ env:
 before_install:
   - docker login -u=$DOCKER_LOGIN -p=$DOCKER_PASSWORD
   #- docker pull gradle
-  - docker push $DOCKER_LOGIN/WEB1066-the-app
+  - docker push $DOCKER_LOGIN/the-app
 
 install:
 
