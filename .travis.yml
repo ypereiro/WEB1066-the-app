@@ -14,13 +14,13 @@ script:
   - docker build -t the-app .
   - docker run ./gradlew -p $TESTFOLDER packageToContainer
 
-deploy:
-  -provider: script
-   script:
-     bash ./script/permission.sh;
-     bash ./script/deploy.sh
-     on:
-       branch: master
-       condition: $TESTFOLDER=./monolithic/ui
+#deploy:
+#  -provider: script
+#   script:
+#     bash ./script/permission.sh;
+##     bash ./script/deploy.sh
+  #   on:
+  ##     branch: master
+    #   condition: $TESTFOLDER=./monolithic/ui
 
 #  - docker push $DOCKER_LOGIN/WEB1066-the-app
