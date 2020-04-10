@@ -12,11 +12,11 @@ before_install:
 
 script:
   - docker build -t the-app .
-  - docker run ./gradlew -p $TESTFOLDER packageToContainer
+  - docker run the-app ./gradlew -p $TESTFOLDER packageToContainer
 
 #deploy:
 #  -provider: script
-#   script: ./script/permission.sh
+#   script: ./script/depoy.sh
 #   on:
 #     branch: master
 #     condition: $TESTFOLDER=./monolithic/ui
