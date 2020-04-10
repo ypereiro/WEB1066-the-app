@@ -14,9 +14,9 @@ script:
   - docker build -t the-app .
   - docker run ./gradlew -p $TESTFOLDER packageToContainer
 
-deploy:
-  -provider: script
-   script: ./script/permission.sh
-   on:
-     branch: master
-     condition: $TESTFOLDER=./monolithic/ui
+#deploy:
+#  -provider: script
+#   script: ./script/permission.sh
+#   on:
+#     branch: master
+#     condition: $TESTFOLDER=./monolithic/ui
